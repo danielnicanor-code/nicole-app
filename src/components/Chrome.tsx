@@ -19,7 +19,7 @@ export default function Chrome({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-dvh flex-col bg-[#bf648f]">
       <TopNav />
-      <main className="flex-1 pb-24 md:pb-10">{children}</main>
+      <main className="flex-1 pb-[calc(9.5rem+env(safe-area-inset-bottom))] md:pb-10">{children}</main>
       <BottomNav />
       <FloatingAddButton />
     </div>

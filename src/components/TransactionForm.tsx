@@ -10,14 +10,15 @@ import type { Transaction } from "@/db/schema";
 interface TransactionFormProps {
   mode: "add" | "edit";
   transaction?: Transaction;
+  initialType?: TransactionType;
 }
 
-export default function TransactionForm({ mode, transaction }: TransactionFormProps) {
+export default function TransactionForm({ mode, transaction, initialType }: TransactionFormProps) {
   const router = useRouter();
   const action = mode === "edit" ? updateTransaction : createTransaction;
   const [state, formAction, isPending] = useActionState(action, undefined);
 
-  const [type, setType] = useState<TransactionType>(transaction?.type ?? "expense");
+  const [type, setType] = useState<TransactionType>(transaction?.type ?? initialType ?? "expense");
   const [category, setCategory] = useState<string>(transaction?.category ?? "");
   const [confirmingDelete, setConfirmingDelete] = useState(false);
 

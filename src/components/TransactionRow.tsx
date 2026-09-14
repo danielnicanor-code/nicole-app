@@ -11,7 +11,7 @@ export default function TransactionRow({ tx }: { tx: Transaction }) {
   return (
     <Link
       href={`/expenses/${tx.id}`}
-      className="flex items-center gap-3 px-4 py-3 transition hover:bg-stone-50 active:bg-stone-100"
+      className="flex items-center gap-3 px-4 py-3.5 transition hover:bg-stone-50 active:bg-stone-100"
     >
       <div
         className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg"
@@ -21,12 +21,14 @@ export default function TransactionRow({ tx }: { tx: Transaction }) {
       </div>
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-medium text-stone-800">{category.label}</p>
-        <p className="truncate text-xs text-stone-500">
+        <p className="mt-0.5 truncate text-xs text-stone-500">
           {formatDayLabel(dateObj)}
           {tx.note ? ` · ${tx.note}` : ""}
         </p>
       </div>
-      <p className={`shrink-0 text-sm font-semibold ${tx.type === "income" ? "text-positive" : "text-negative"}`}>
+      <p
+        className={`shrink-0 whitespace-nowrap text-sm font-semibold ${tx.type === "income" ? "text-positive" : "text-negative"}`}
+      >
         {formatSignedCurrency(tx.amount, tx.type)}
       </p>
     </Link>

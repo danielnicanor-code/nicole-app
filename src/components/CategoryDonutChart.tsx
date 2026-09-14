@@ -34,13 +34,13 @@ export default function CategoryDonutChart({ data }: { data: CategoryBreakdownIt
         </ResponsiveContainer>
       </div>
 
-      <div className="min-w-0 flex-1 space-y-2">
+      <div className="min-w-0 flex-1 space-y-2.5">
         {chartData.map((entry) => (
           <div key={entry.name} className="flex items-center gap-2 text-sm">
             <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: entry.color }} aria-hidden />
             <span aria-hidden>{entry.icon}</span>
             <span className="min-w-0 flex-1 truncate text-stone-600">{entry.name}</span>
-            <span className="shrink-0 font-semibold text-stone-800">{Math.round(entry.percent)}%</span>
+            <span className="w-9 shrink-0 text-right font-semibold text-stone-800">{Math.round(entry.percent)}%</span>
           </div>
         ))}
       </div>

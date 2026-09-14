@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV_ITEMS } from "./nav-items";
+import AddFab from "./AddFab";
 
 export default function BottomNav() {
   const pathname = usePathname();
@@ -25,13 +26,7 @@ export default function BottomNav() {
           );
         })}
       </div>
-      <Link
-        href="/add"
-        aria-label="Add transaction"
-        className="absolute -top-16 right-6 flex h-16 w-16 items-center justify-center rounded-full bg-pink-600 text-3xl font-light leading-none text-white shadow-lg shadow-pink-600/30 transition active:scale-95"
-      >
-        +
-      </Link>
+      <AddFab wrapperClassName="absolute bottom-[calc(100%+18px)] right-6 z-50 flex flex-col items-end gap-2" />
     </nav>
   );
 }
