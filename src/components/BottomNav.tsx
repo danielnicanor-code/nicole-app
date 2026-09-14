@@ -17,20 +17,21 @@ export default function BottomNav() {
               key={item.href}
               href={item.href}
               className={`rounded-2xl px-4 py-3 text-sm font-medium transition ${
-                active ? "bg-rose-100 text-rose-500" : "text-stone-400"
+                active ? "bg-rose-100 text-accent" : "text-stone-500"
               }`}
             >
               {item.label}
             </Link>
           );
         })}
-        <Link href="/add" className="flex flex-col items-center gap-0.5 px-2 py-1 text-xs font-medium text-stone-500">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-pink-300 text-lg font-light leading-none text-white">
-            +
-          </span>
-          Add
-        </Link>
       </div>
+      <Link
+        href="/add"
+        aria-label="Add transaction"
+        className="absolute -top-7 right-6 flex h-16 w-16 items-center justify-center rounded-full bg-pink-600 text-3xl font-light leading-none text-white shadow-lg shadow-pink-600/30 transition active:scale-95"
+      >
+        +
+      </Link>
     </nav>
   );
 }

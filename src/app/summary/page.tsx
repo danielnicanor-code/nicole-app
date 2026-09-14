@@ -32,7 +32,7 @@ function DeltaBadge({ value }: { value: number | null }) {
   const isUp = value > 0;
   return (
     <span
-      className={`text-[11px] font-semibold ${isFlat ? "text-stone-400" : isUp ? "text-green-600" : "text-red-500"}`}
+      className={`text-[11px] font-semibold ${isFlat ? "text-stone-500" : isUp ? "text-positive" : "text-negative"}`}
     >
       {isFlat ? "No change" : `${isUp ? "▲" : "▼"} ${Math.abs(value).toFixed(0)}% vs last month`}
     </span>
@@ -64,7 +64,7 @@ export default async function SummaryPage({
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-6 px-4 py-6">
-      <h1 className="text-2xl font-bold text-stone-800">Summary</h1>
+      <h1 className="text-2xl font-bold text-stone-900">Summary</h1>
 
       <div className="flex gap-2 overflow-x-auto pb-1">
         {monthlyTotals.map((m) => {
@@ -74,7 +74,7 @@ export default async function SummaryPage({
               key={`${m.year}-${m.month}`}
               href={`/summary?month=${m.year}-${String(m.month).padStart(2, "0")}`}
               className={`shrink-0 rounded-full px-4 py-2 text-sm font-medium transition ${
-                active ? "bg-rose-500 text-white" : "bg-white text-stone-500 shadow-sm"
+                active ? "bg-accent text-white" : "bg-white text-stone-500 shadow-sm"
               }`}
             >
               {formatMonthShort(new Date(Date.UTC(m.year, m.month - 1, 1)))}
@@ -86,22 +86,22 @@ export default async function SummaryPage({
 
       <section className="grid grid-cols-3 gap-2 sm:gap-3">
         <div className="rounded-2xl bg-white p-2.5 shadow-sm sm:p-3.5">
-          <p className="text-xs font-medium text-stone-400">Income</p>
-          <p className="mt-1 break-words text-sm font-bold leading-tight text-green-600 sm:text-lg">
+          <p className="text-xs font-medium text-stone-500">Income</p>
+          <p className="mt-1 break-words text-sm font-bold leading-tight text-positive sm:text-lg">
             {formatCurrency(selected.income)}
           </p>
           <DeltaBadge value={percentChange(selected.income, previous.income)} />
         </div>
         <div className="rounded-2xl bg-white p-2.5 shadow-sm sm:p-3.5">
-          <p className="text-xs font-medium text-stone-400">Expenses</p>
-          <p className="mt-1 break-words text-sm font-bold leading-tight text-red-500 sm:text-lg">
+          <p className="text-xs font-medium text-stone-500">Expenses</p>
+          <p className="mt-1 break-words text-sm font-bold leading-tight text-negative sm:text-lg">
             {formatCurrency(selected.expense)}
           </p>
           <DeltaBadge value={percentChange(selected.expense, previous.expense)} />
         </div>
         <div className="rounded-2xl bg-white p-2.5 shadow-sm sm:p-3.5">
-          <p className="text-xs font-medium text-stone-400">Net</p>
-          <p className={`mt-1 break-words text-sm font-bold leading-tight sm:text-lg ${net >= 0 ? "text-green-600" : "text-orange-500"}`}>
+          <p className="text-xs font-medium text-stone-500">Net</p>
+          <p className={`mt-1 break-words text-sm font-bold leading-tight sm:text-lg ${net >= 0 ? "text-positive" : "text-warning"}`}>
             {formatCurrency(net)}
           </p>
           <DeltaBadge value={percentChange(net, prevNet)} />

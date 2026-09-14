@@ -21,12 +21,12 @@ export default function TransactionRow({ tx }: { tx: Transaction }) {
       </div>
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-medium text-stone-800">{category.label}</p>
-        <p className="truncate text-xs text-stone-400">
+        <p className="truncate text-xs text-stone-500">
           {formatDayLabel(dateObj)}
           {tx.note ? ` · ${tx.note}` : ""}
         </p>
       </div>
-      <p className={`shrink-0 text-sm font-semibold ${tx.type === "income" ? "text-green-600" : "text-red-500"}`}>
+      <p className={`shrink-0 text-sm font-semibold ${tx.type === "income" ? "text-positive" : "text-negative"}`}>
         {formatSignedCurrency(tx.amount, tx.type)}
       </p>
     </Link>

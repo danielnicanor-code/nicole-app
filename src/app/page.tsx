@@ -30,22 +30,22 @@ export default async function HomePage() {
       </Suspense>
 
       <header>
-        <h1 className="text-2xl font-bold text-stone-800">{greeting}, Colai! 👋</h1>
-        <p className="text-sm text-stone-500">{formatMonthLabel(monthDate)}</p>
+        <h1 className="text-2xl font-bold text-stone-900">{greeting}, Colai! 👋</h1>
+        <p className="text-sm font-medium text-stone-900">{formatMonthLabel(monthDate)}</p>
       </header>
 
       <section className="grid grid-cols-3 gap-2 sm:gap-3">
         <div className="rounded-2xl bg-white p-2.5 shadow-sm sm:p-3.5">
-          <p className="text-xs font-medium text-stone-400">Income</p>
-          <p className="mt-1 break-words text-sm font-bold leading-tight text-green-600 sm:text-lg">{formatCurrency(income)}</p>
+          <p className="text-xs font-medium text-stone-500">Income</p>
+          <p className="mt-1 break-words text-sm font-bold leading-tight text-positive sm:text-lg">{formatCurrency(income)}</p>
         </div>
         <div className="rounded-2xl bg-white p-2.5 shadow-sm sm:p-3.5">
-          <p className="text-xs font-medium text-stone-400">Expenses</p>
-          <p className="mt-1 break-words text-sm font-bold leading-tight text-red-500 sm:text-lg">{formatCurrency(expense)}</p>
+          <p className="text-xs font-medium text-stone-500">Expenses</p>
+          <p className="mt-1 break-words text-sm font-bold leading-tight text-negative sm:text-lg">{formatCurrency(expense)}</p>
         </div>
         <div className="rounded-2xl bg-white p-2.5 shadow-sm sm:p-3.5">
-          <p className="text-xs font-medium text-stone-400">Net</p>
-          <p className={`mt-1 break-words text-sm font-bold leading-tight sm:text-lg ${net >= 0 ? "text-green-600" : "text-orange-500"}`}>
+          <p className="text-xs font-medium text-stone-500">Net</p>
+          <p className={`mt-1 break-words text-sm font-bold leading-tight sm:text-lg ${net >= 0 ? "text-positive" : "text-warning"}`}>
             {formatCurrency(net)}
           </p>
         </div>
@@ -59,7 +59,7 @@ export default async function HomePage() {
       <section className="rounded-2xl bg-white shadow-sm">
         <div className="flex items-center justify-between px-4 pt-4">
           <h2 className="text-sm font-semibold text-stone-700">Recent activity</h2>
-          <Link href="/expenses" className="text-xs font-medium text-rose-500">
+          <Link href="/expenses" className="text-xs font-semibold text-accent">
             See all
           </Link>
         </div>

@@ -4,7 +4,7 @@ import type { CategoryBreakdownItem } from "@/lib/transactions";
 
 export default function CategoryBreakdownList({ data }: { data: CategoryBreakdownItem[] }) {
   if (data.length === 0) {
-    return <p className="px-4 py-6 text-center text-sm text-stone-400">No expenses for this month yet.</p>;
+    return <p className="px-4 py-6 text-center text-sm text-stone-500">No expenses for this month yet.</p>;
   }
 
   return (
@@ -31,7 +31,7 @@ export default function CategoryBreakdownList({ data }: { data: CategoryBreakdow
                 />
               </div>
             </div>
-            <p className="w-10 shrink-0 text-right text-xs text-stone-400">{item.percent.toFixed(0)}%</p>
+            <p className="w-10 shrink-0 text-right text-xs text-stone-500">{item.percent.toFixed(0)}%</p>
           </div>
         );
       })}

@@ -3,11 +3,24 @@
 :root {
   --background: #bf648f;
   --foreground: #292524;
+
+  /* Semantic text colors. Chosen to hold WCAG AA contrast (4.5:1 for normal
+     text) against both white cards and the pink page background, not just
+     against white — several of the original Tailwind 500-shades only passed
+     against white. */
+  --color-positive: #15803d; /* income / positive amounts */
+  --color-negative: #dc2626; /* expenses / negative amounts */
+  --color-warning: #c2410c; /* negative net (rare edge case) */
+  --color-accent: #e11d48; /* links, active nav/tab state */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-positive: var(--color-positive);
+  --color-negative: var(--color-negative);
+  --color-warning: var(--color-warning);
+  --color-accent: var(--color-accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

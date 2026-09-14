@@ -8,7 +8,7 @@ import type { CategoryBreakdownItem } from "@/lib/transactions";
 export default function CategoryDonutChart({ data }: { data: CategoryBreakdownItem[] }) {
   if (data.length === 0) {
     return (
-      <div className="flex h-40 items-center justify-center text-sm text-stone-400">
+      <div className="flex h-40 items-center justify-center text-sm text-stone-500">
         No expenses yet this month
       </div>
     );

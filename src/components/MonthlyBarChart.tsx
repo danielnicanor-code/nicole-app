@@ -19,7 +19,7 @@ export default function MonthlyBarChart({ data }: { data: MonthTotals[] }) {
         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#eee" />
         <XAxis dataKey="label" tick={{ fontSize: 12, fill: "#78716c" }} axisLine={false} tickLine={false} />
         <YAxis
-          tick={{ fontSize: 11, fill: "#a8a29e" }}
+          tick={{ fontSize: 11, fill: "#78716c" }}
           axisLine={false}
           tickLine={false}
           width={40}

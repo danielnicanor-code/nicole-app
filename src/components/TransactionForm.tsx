@@ -55,7 +55,7 @@ export default function TransactionForm({ mode, transaction }: TransactionFormPr
             type="button"
             onClick={() => handleTypeChange("expense")}
             className={`rounded-xl py-2.5 text-sm font-semibold transition ${
-              type === "expense" ? "bg-white text-red-500 shadow-sm" : "text-stone-500"
+              type === "expense" ? "bg-white text-negative shadow-sm" : "text-stone-500"
             }`}
           >
             Expense
@@ -64,7 +64,7 @@ export default function TransactionForm({ mode, transaction }: TransactionFormPr
             type="button"
             onClick={() => handleTypeChange("income")}
             className={`rounded-xl py-2.5 text-sm font-semibold transition ${
-              type === "income" ? "bg-white text-green-600 shadow-sm" : "text-stone-500"
+              type === "income" ? "bg-white text-positive shadow-sm" : "text-stone-500"
             }`}
           >
             Income
@@ -72,11 +72,11 @@ export default function TransactionForm({ mode, transaction }: TransactionFormPr
         </div>
 
         <div>
-          <label htmlFor="amount" className="mb-1.5 block text-sm font-medium text-stone-600">
+          <label htmlFor="amount" className="mb-1.5 block text-sm font-semibold text-stone-900">
             Amount
           </label>
           <div className="flex items-center rounded-2xl border border-stone-200 bg-white px-4 py-3 focus-within:border-rose-300">
-            <span className="mr-2 text-lg text-stone-400">₱</span>
+            <span className="mr-2 text-lg text-stone-500">₱</span>
             <input
               id="amount"
               name="amount"
@@ -93,7 +93,7 @@ export default function TransactionForm({ mode, transaction }: TransactionFormPr
         </div>
 
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-stone-600">
+          <label className="mb-1.5 block text-sm font-semibold text-stone-900">
             {type === "expense" ? "Category" : "Source"}
           </label>
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
@@ -114,7 +114,7 @@ export default function TransactionForm({ mode, transaction }: TransactionFormPr
         </div>
 
         <div>
-          <label htmlFor="date" className="mb-1.5 block text-sm font-medium text-stone-600">
+          <label htmlFor="date" className="mb-1.5 block text-sm font-semibold text-stone-900">
             Date
           </label>
           <input
@@ -128,7 +128,7 @@ export default function TransactionForm({ mode, transaction }: TransactionFormPr
         </div>
 
         <div>
-          <label htmlFor="note" className="mb-1.5 block text-sm font-medium text-stone-600">
+          <label htmlFor="note" className="mb-1.5 block text-sm font-semibold text-stone-900">
             Note (optional)
           </label>
           <input
@@ -141,13 +141,15 @@ export default function TransactionForm({ mode, transaction }: TransactionFormPr
           />
         </div>
 
-        {state?.error && <p className="text-sm font-medium text-red-500">{state.error}</p>}
+        {state?.error && (
+          <p className="rounded-xl bg-white px-3 py-2 text-sm font-medium text-negative">{state.error}</p>
+        )}
 
         <div className="mt-auto pt-4">
           <button
             type="submit"
             disabled={isPending || !category}
-            className="w-full rounded-2xl bg-rose-500 py-3.5 text-center text-base font-semibold text-white shadow-sm transition active:scale-[0.99] disabled:opacity-50"
+            className="w-full rounded-2xl bg-accent py-3.5 text-center text-base font-semibold text-white shadow-sm transition active:scale-[0.99] disabled:opacity-50"
           >
             {isPending ? "Saving…" : "Save"}
           </button>
@@ -160,13 +162,13 @@ export default function TransactionForm({ mode, transaction }: TransactionFormPr
             <button
               type="button"
               onClick={() => setConfirmingDelete(true)}
-              className="w-full rounded-2xl border border-red-200 py-3.5 text-center text-sm font-semibold text-red-500"
+              className="w-full rounded-2xl border border-red-200 bg-white py-3.5 text-center text-sm font-semibold text-negative"
             >
               Delete transaction
             </button>
           ) : (
             <div className="flex flex-col gap-3 rounded-2xl border border-red-200 bg-red-50 p-4">
-              <p className="text-sm font-medium text-red-600">Delete this transaction? This can&apos;t be undone.</p>
+              <p className="text-sm font-medium text-negative">Delete this transaction? This can&apos;t be undone.</p>
               <div className="flex gap-2">
                 <button
                   type="button"
@@ -178,7 +180,7 @@ export default function TransactionForm({ mode, transaction }: TransactionFormPr
                 <form action={deleteTransaction.bind(null, transaction.id)} className="flex-1">
                   <button
                     type="submit"
-                    className="w-full rounded-xl bg-red-500 py-2.5 text-sm font-semibold text-white"
+                    className="w-full rounded-xl bg-negative py-2.5 text-sm font-semibold text-white"
                   >
                     Confirm delete
                   </button>

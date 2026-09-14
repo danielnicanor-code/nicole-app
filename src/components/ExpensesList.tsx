@@ -37,7 +37,7 @@ export default function ExpensesList({ transactions }: { transactions: Transacti
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-4 px-4 py-6">
-      <h1 className="text-2xl font-bold text-stone-800">Expenses</h1>
+      <h1 className="text-2xl font-bold text-stone-900">Expenses</h1>
 
       <div className="flex gap-2 rounded-2xl bg-stone-200/60 p-1">
         {FILTERS.map((f) => (
@@ -60,7 +60,7 @@ export default function ExpensesList({ transactions }: { transactions: Transacti
       ) : (
         groups.map((group) => (
           <section key={group.label} className="rounded-2xl bg-white shadow-sm">
-            <h2 className="px-4 pb-1 pt-4 text-xs font-semibold uppercase tracking-wide text-stone-400">
+            <h2 className="px-4 pb-1 pt-4 text-xs font-semibold uppercase tracking-wide text-stone-500">
               {group.label}
             </h2>
             <div className="mt-1 divide-y divide-stone-100">

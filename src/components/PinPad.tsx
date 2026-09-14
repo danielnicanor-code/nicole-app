@@ -70,7 +70,7 @@ export default function PinPad({ next }: { next?: string }) {
         ))}
       </div>
 
-      {state?.error && <p className="text-sm font-medium text-red-500">{state.error}</p>}
+      {state?.error && <p className="text-sm font-medium text-negative">{state.error}</p>}
 
       <div className="grid grid-cols-3 gap-4">
         {KEYS.map((key, i) =>
