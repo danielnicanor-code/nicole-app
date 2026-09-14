@@ -24,12 +24,10 @@ export default function BottomNav() {
             </Link>
           );
         })}
-        <Link
-          href="/add"
-          className={`rounded-2xl px-4 py-3 text-sm font-medium transition ${
-            pathname === "/add" ? "bg-rose-100 text-rose-500" : "text-stone-400"
-          }`}
-        >
+        <Link href="/add" className="flex flex-col items-center gap-0.5 px-2 py-1 text-xs font-medium text-stone-500">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-pink-300 text-lg font-light leading-none text-white">
+            +
+          </span>
           Add
         </Link>
       </div>
