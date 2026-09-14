@@ -28,7 +28,7 @@ export default function BottomNav() {
       <Link
         href="/add"
         aria-label="Add transaction"
-        className="absolute -top-7 right-6 flex h-16 w-16 items-center justify-center rounded-full bg-pink-600 text-3xl font-light leading-none text-white shadow-lg shadow-pink-600/30 transition active:scale-95"
+        className="absolute -top-16 right-6 flex h-16 w-16 items-center justify-center rounded-full bg-pink-600 text-3xl font-light leading-none text-white shadow-lg shadow-pink-600/30 transition active:scale-95"
       >
         +
       </Link>
