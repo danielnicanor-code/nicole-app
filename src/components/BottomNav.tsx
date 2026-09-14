@@ -26,7 +26,7 @@ export default function BottomNav() {
           );
         })}
       </div>
-      <AddFab wrapperClassName="absolute bottom-[calc(100%+18px)] right-6 z-50 flex flex-col items-end gap-2" />
+      <AddFab className="absolute bottom-[calc(100%+18px)] right-6 z-50 flex" />
     </nav>
   );
 }
