@@ -19,7 +19,7 @@ export default function AppSplash() {
 
   return (
     <div
-      className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#fdf6f0] transition-opacity duration-300 ${
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#FFB2D0] transition-opacity duration-300 ${
         phase === "fading" ? "pointer-events-none opacity-0" : "opacity-100"
       }`}
     >

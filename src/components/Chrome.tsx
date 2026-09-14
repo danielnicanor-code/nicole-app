@@ -17,7 +17,7 @@ export default function Chrome({ children }: { children: ReactNode }) {
   }
 
   return (
-    <div className="flex min-h-dvh flex-col bg-stone-50">
+    <div className="flex min-h-dvh flex-col bg-[#FFB2D0]">
       <TopNav />
       <main className="flex-1 pb-24 md:pb-10">{children}</main>
       <BottomNav />
