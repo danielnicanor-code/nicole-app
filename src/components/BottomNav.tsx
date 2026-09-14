@@ -16,13 +16,10 @@ export default function BottomNav() {
             <Link
               key={item.href}
               href={item.href}
-              className={`flex flex-col items-center gap-0.5 rounded-2xl px-4 py-2 text-xs font-medium transition ${
+              className={`rounded-2xl px-4 py-3 text-sm font-medium transition ${
                 active ? "bg-rose-100 text-rose-500" : "text-stone-400"
               }`}
             >
-              <span className="text-lg" aria-hidden>
-                {item.icon}
-              </span>
               {item.label}
             </Link>
           );

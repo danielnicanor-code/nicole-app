@@ -24,7 +24,7 @@ export default function TopNav() {
                 active ? "bg-white text-rose-500 shadow-sm" : "text-stone-500 hover:text-stone-700"
               }`}
             >
-              <span aria-hidden>{item.icon}</span> {item.label}
+              {item.label}
             </Link>
           );
         })}
