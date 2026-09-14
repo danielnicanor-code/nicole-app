@@ -30,7 +30,7 @@ export default function TransactionForm({ mode, transaction }: TransactionFormPr
   }
 
   return (
-    <div className="mx-auto flex min-h-dvh max-w-lg flex-col bg-[#FFB2D0]">
+    <div className="mx-auto flex min-h-dvh max-w-lg flex-col bg-[#bf648f]">
       <header className="flex items-center gap-3 border-b border-stone-200 bg-white px-4 py-4">
         <button
           type="button"
