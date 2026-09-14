@@ -29,7 +29,7 @@ export const EXPENSE_CATEGORIES: Category[] = [
 export const INCOME_CATEGORIES: Category[] = [
   { key: "Allowance – Mama", label: "Allowance – Mama", icon: "💝", color: "#22C55E" },
   { key: "Allowance – Daddy", label: "Allowance – Daddy", icon: "💝", color: "#16A34A" },
-  { key: "SP Practice", label: "SP Practice", icon: "🩺", color: "#10B981" },
+  { key: "SP Practice", label: "SP Practice", icon: "👦", color: "#10B981" },
   { key: "Med Practice", label: "Med Practice", icon: "⚕️", color: "#059669" },
   { key: "Other Income", label: "Other Income", icon: "💵", color: "#65A30D" },
 ];
